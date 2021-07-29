@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMO.Product.API</name>
+    </assembly>
+    <members>
+        <member name="M:CMO.Products.API.Controllers.ProductsController.Get">
+            <summary>
+            Obtêm os produtos
+            </summary>
+            <returns>Coleção de objetos da classe Produto</returns>                
+            <response code="200">Lista dos produtos</response>        
+            <response code="400">Falha na requisição</response>         
+            <response code="404">Nenhum produto foi localizado</response>         
+        </member>
+        <member name="M:CMO.Products.API.Controllers.ProductsController.GetAsync(System.Guid)">
+            <summary>
+            Obtêm as informações do produto pelo seu Id
+            </summary>
+            <param name="id">Código do produto</param>
+            <returns>Objetos da classe Produto</returns>                
+            <response code="200">Informações do Produto</response>
+            <response code="400">Falha na requisição</response>            
+            <response code="404">O produto não foi localizado</response>         
+        </member>
+        <member name="M:CMO.Products.API.Controllers.ProductsController.PostAsync(CMO.Product.API.Application.DTO.ProductDTO)">
+             <summary>
+             Grava o produto
+             </summary>   
+             <remarks>
+             Exemplo request:
+            
+                 POST / Produto
+                 {
+                     "title": "Sandalia",
+                     "description": "Sandália Preta Couro Salto Fino",
+                     "price": 249.50,
+                     "quantity": 100       
+                 }
+             </remarks>        
+             <returns>Retorna objeto criado da classe Produto</returns>                
+             <response code="201">O produto foi incluído corretamente</response>                
+             <response code="400">Falha na requisição</response>         
+        </member>
+        <member name="M:CMO.Products.API.Controllers.ProductsController.PutAsync(System.Guid,CMO.Product.API.Application.DTO.ProductDTO)">
+            <summary>
+            Altera o produto
+            </summary>        
+            <param name="id">Código do produto</param>        
+            <response code="204">O produto foi alterado corretamente</response>                
+            <response code="400">Falha na requisição</response>       
+            <response code="404">O produto não foi localizado</response>         
+        </member>
+        <member name="M:CMO.Products.API.Controllers.ProductsController.DeleteAsync(System.Guid)">
+            <summary>
+            Deleta o produto pelo seu Id
+            </summary>        
+            <param name="id">Código do produto</param>        
+            <response code="204">O produto foi excluído corretamente</response>                
+            <response code="400">Falha na requisição</response>         
+            <response code="404">O produto não foi localizado</response>         
+        </member>
+    </members>
+</doc>
